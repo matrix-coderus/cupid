@@ -3,5 +3,19 @@
 
     <string name="app_name">ShopWell</string>
     <string name="hello_world">Hello world!</string>
+    
+    <!-- Home Page Resources -->
+    <string name="products_btn">Products</string>
+    <string name="add_customer_btn">Add Customer</string>
+    <string name="list_customers_btn">List Customer</string>
+    
+    <!-- Add Customer Resources -->
+    <string name="title_activity_add_customer">Registration</string>
+    <string name="heading_add_customer">Registration for Customers</string>
+    <string name="label_firstname">First Name</string>
+    <string name="label_lastname">Last Name</string>
+    <string name="hint_firstname">Enter First Name</string>
+    <string name="hint_lastname">Enter Last Name</string>
+    <string name="register_customer_btn">Register</string>
 
 </resources>

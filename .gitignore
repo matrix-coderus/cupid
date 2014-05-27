@@ -2,3 +2,5 @@ ShopWell/.classpath
 ShopWell/.settings
 ShopWell/.project
 ShopWell/bin/*
+.metadata
+appcompat_v7
