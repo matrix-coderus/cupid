@@ -4,3 +4,9 @@ ShopWell/.project
 ShopWell/bin/*
 .metadata
 appcompat_v7
+ShopWellTest/.classpath
+ShopWellTest/.settings
+ShopWellTest/.project
+ShopWellTest/bin/*
+ShopWellTest/libs
+ShopWellTest/local.properties

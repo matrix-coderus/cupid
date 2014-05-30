@@ -5,6 +5,6 @@ import java.util.List;
 
 public class Containers {
 	
-	protected static List<Customer> customerList = new ArrayList<Customer>();
+	public static List<Customer> customerList = new ArrayList<Customer>();
 
 }
