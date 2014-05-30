@@ -45,9 +45,12 @@ public class AddCustomerActivity extends Activity implements OnClickListener {
 		}
 		
 		if ((firstNameEntered.length()>0 && lastNameEntered.length()>0)) {
-			Customer customer = new Customer(firstNameEntered, lastNameEntered, 1000.00, new Basket());
-			Containers.customerList.add(customer);
-			Toast.makeText(this, "Customer has been added", Toast.LENGTH_SHORT).show();
+			if ((firstNameEntered.length()<26 && lastNameEntered.length()<26)) {
+				Customer customer = new Customer(firstNameEntered, lastNameEntered, 1000.00, new Basket());
+				Containers.customerList.add(customer);
+				Toast.makeText(this, "Customer has been added", Toast.LENGTH_SHORT).show();
+			}
+			
 		}
 	
 		

@@ -15,11 +15,11 @@ import android.test.ActivityInstrumentationTestCase2;
 public class AddCustomerActivityModel extends
 		ActivityInstrumentationTestCase2<AddCustomerActivity> {
 
-	private EditText firstname;
-	private EditText lastname;
-	private Button registerBtn;
-	private AddCustomerActivity activity;
-	private Solo solo;
+	protected EditText firstname;
+	protected EditText lastname;
+	protected Button registerBtn;
+	protected AddCustomerActivity activity;
+	protected Solo solo;
 
 	public AddCustomerActivityModel() {
 		super(AddCustomerActivity.class);
@@ -38,35 +38,13 @@ public class AddCustomerActivityModel extends
 		Containers.customerList.clear();
 	}
 	
-	public void testPreconditions() {
-		assertNotNull(activity);
-		assertNotNull(firstname);
-		assertNotNull(lastname);
-		assertNotNull(registerBtn);
-	}
 	
-	private void fillForm(String first, String last) {
+	
+	protected void fillForm(String first, String last) {
 		solo.enterText(firstname, first);
 		solo.enterText(lastname, last);
 		solo.clickOnButton(solo.getString(R.string.register_customer_btn));
 	}
-	
-	public void testUserRegisters() {
-		fillForm("Karl", "Jenkins");
-		assertEquals(1, Containers.customerList.size());
-	}
-	
-	public void testFirstnameCannotBeBlank() {
-		fillForm("", "Jenkins");
-		assertEquals(0, Containers.customerList.size());
-	}
-	
-	public void testLastnameCannotBeBlank() {
-		fillForm("Karl", "");
-		assertEquals(0, Containers.customerList.size());
-	}
-	
-	
 	
 
 	@Override

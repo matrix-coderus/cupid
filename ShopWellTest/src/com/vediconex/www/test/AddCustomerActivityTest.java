@@ -1,51 +1,19 @@
 package com.vediconex.www.test;
 
-import android.test.ActivityInstrumentationTestCase2;
-import android.widget.Button;
-import android.widget.EditText;
-
-import com.robotium.solo.Solo;
-import com.vediconex.www.AddCustomerActivity;
 import com.vediconex.www.Containers;
-import com.vediconex.www.R;
 
-public class AddCustomerActivityTest extends
-		ActivityInstrumentationTestCase2<AddCustomerActivity> {
-	
-	private EditText firstname;
-	private EditText lastname;
-	private Button registerBtn;
-	private AddCustomerActivity activity;
-	private Solo solo;
+
+public class AddCustomerActivityTest extends AddCustomerActivityModel {
 
 	public AddCustomerActivityTest() {
-		super(AddCustomerActivity.class);
+		super();
 	}
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-
-		setActivityInitialTouchMode(false);
-		activity = getActivity();
-		solo = new Solo(getInstrumentation(), activity);
-		firstname = (EditText)activity.findViewById(R.id.edit_txt_firstname);
-		lastname = (EditText)activity.findViewById(R.id.edit_txt_last_name);
-		registerBtn = (Button)activity.findViewById(R.id.btnRegister);
-		Containers.customerList.clear();
-	}
-	
 	public void testPreconditions() {
 		assertNotNull(activity);
 		assertNotNull(firstname);
 		assertNotNull(lastname);
 		assertNotNull(registerBtn);
-	}
-	
-	private void fillForm(String first, String last) {
-		solo.enterText(firstname, first);
-		solo.enterText(lastname, last);
-		solo.clickOnButton(solo.getString(R.string.register_customer_btn));
 	}
 	
 	public void testUserRegisters() {
@@ -63,17 +31,21 @@ public class AddCustomerActivityTest extends
 		assertEquals(0, Containers.customerList.size());
 	}
 	
-	
-	
-
-	@Override
-	protected void tearDown() throws Exception {
-		// TODO Auto-generated method stub
-		super.tearDown();
+	public void testToastMessageConfirmation() {
+		fillForm("Karl", "Jenkins");
+		assertTrue(solo.searchText("Customer has been added"));
 	}
 	
+	public void testFirstNameMaxCharValidation() {
+		fillForm("abcdefghijklmnopqrstuvwxyz", "Jenkins");
+		assertEquals(0, Containers.customerList.size());
+		assertFalse(solo.searchText("Customer has been added"));
+	}
 	
-	
-	
+	public void testLastNameMaxCharValidation() {
+		fillForm("Karl","abcdefghijklmnopqrstuvwxyz");
+		assertEquals(0, Containers.customerList.size());
+		assertFalse(solo.searchText("Customer has been added"));
+	}
 
 }
