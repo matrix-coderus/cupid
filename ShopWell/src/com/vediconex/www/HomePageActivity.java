@@ -39,7 +39,8 @@ public class HomePageActivity extends Activity implements OnClickListener {
 		case R.id.btnAddCustomer: i = new Intent(this, AddCustomerActivity.class);
 		startActivity(i);
 		break;
-		case R.id.btnListCustomers: 
+		case R.id.btnListCustomers: i = new Intent(this, SelectCustomerActivity.class);
+		startActivity(i);
 		break;
 		default: Toast.makeText(this, "Experience errors try again", Toast.LENGTH_SHORT).show();
 		}

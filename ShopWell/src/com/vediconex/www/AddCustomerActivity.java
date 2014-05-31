@@ -1,6 +1,7 @@
 package com.vediconex.www;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -49,6 +50,10 @@ public class AddCustomerActivity extends Activity implements OnClickListener {
 				Customer customer = new Customer(firstNameEntered, lastNameEntered, 1000.00, new Basket());
 				Containers.customerList.add(customer);
 				Toast.makeText(this, "Customer has been added", Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(this,SelectCustomerActivity.class);
+				startActivity(i);
+				finish();
+				
 			}
 			
 		}

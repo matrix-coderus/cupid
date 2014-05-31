@@ -1012,6 +1012,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
         public static final int listMode=0x7f050001;
+        public static final int listView_selectCustomer=0x7f050047;
         public static final int list_item=0x7f050029;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
@@ -1037,6 +1038,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
+        public static final int textView_select_customer_heading=0x7f050046;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int txt_view_firstname=0x7f05003e;
@@ -1097,7 +1099,8 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int activity_add_customer=0x7f030017;
         public static final int activity_home_page=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int activity_select_customer=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1148,6 +1151,7 @@ containing a value of this type.
         public static final int hint_lastname=0x7f0a0017;
         public static final int label_firstname=0x7f0a0014;
         public static final int label_lastname=0x7f0a0015;
+        public static final int label_select_cust_heading=0x7f0a001a;
         public static final int list_customers_btn=0x7f0a0011;
         /**  Home Page Resources 
          */
@@ -1156,6 +1160,7 @@ containing a value of this type.
         /**  Add Customer Resources 
          */
         public static final int title_activity_add_customer=0x7f0a0012;
+        public static final int title_activity_select_customer=0x7f0a0019;
     }
     public static final class style {
         /** 

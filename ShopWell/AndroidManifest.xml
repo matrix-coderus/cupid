@@ -26,6 +26,10 @@
             android:name="com.vediconex.www.AddCustomerActivity"
             android:label="@string/title_activity_add_customer" >
         </activity>
+        <activity
+            android:name="com.vediconex.www.SelectCustomerActivity"
+            android:label="@string/title_activity_select_customer" >
+        </activity>
     </application>
 
 </manifest>
